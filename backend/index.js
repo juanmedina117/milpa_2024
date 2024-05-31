@@ -1,4 +1,6 @@
 import express from "express";  
+import cors from 'cors';
+
 import routerConteo from "./routes/conteoRoutes.js";
 import db from "./config/db.js";
 
@@ -12,10 +14,13 @@ app.use(express.urlencoded({extended: true}));
 // Permite enviar datos JSON
 app.use(express.json());
 
+// Acceso
+app.use(cors())
+
+
 // Conexion a la base de datos
 try {
     await db.authenticate();
-    db.sync();
     console.log("COnexion a la BD exitosa");
 
 } catch (error) {

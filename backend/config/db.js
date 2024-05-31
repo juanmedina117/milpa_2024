@@ -5,13 +5,10 @@ dotenv.config({path:'.env'});
 
 const { BD_NOMBRE, DB_USUARIO, DB_PASSWORD, DB_HOST } = process.env;
  
-const db = new Sequelize('milpa_2024', DB_USUARIO, DB_PASSWORD ?? '', {
+const db = new Sequelize('contadores', DB_USUARIO, DB_PASSWORD ?? '', {
     host:DB_HOST,
     port:3306,
     dialect:'mysql',
-    define:{
-        timestamps: true
-    },
     pool:{
         max:5,
         min:0,

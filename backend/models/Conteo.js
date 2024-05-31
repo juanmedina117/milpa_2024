@@ -1,8 +1,8 @@
 import {DataTypes} from "sequelize";
 import db from '../config/db.js';
 
-const Conteo = db.define('conteo',{
-    nombre: {
+const Conteo = db.define('contadores',{
+    numero_conteo: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -17,9 +17,6 @@ const Conteo = db.define('conteo',{
     longitud: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    foto: {
-        type: DataTypes.STRING
     }
 });
 
