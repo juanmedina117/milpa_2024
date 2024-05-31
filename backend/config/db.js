@@ -5,8 +5,8 @@ dotenv.config({path:'.env'});
 
 const { BD_NOMBRE, DB_USUARIO, DB_PASSWORD, DB_HOST } = process.env;
  
-const db = new Sequelize('contadores', DB_USUARIO, DB_PASSWORD ?? '', {
-    host:DB_HOST,
+const db = new Sequelize('contadores', 'abraxam_node', 'TxBZ,tzB}.94', {
+    host:'http://abraxasmsdt.com',
     port:3306,
     dialect:'mysql',
     pool:{
