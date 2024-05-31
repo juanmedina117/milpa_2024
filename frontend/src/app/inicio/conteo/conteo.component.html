@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col">
+
+            <div class="card">
+                <div class="card-header">
+                    CONTEO
+                </div>
+                <div class="card-body">
+                    <form autocomplete="off" [formGroup]="myFormConteo" (ngSubmit)="guardarData(myFormConteo.value)">
+                        <div class="mb-3">
+                            <label  for="nombre" class="form-label">Nombre</label>
+                            <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre de personal que registra" required>
+                        </div>
+                        <div class="mb-3">
+                            <label  for="seccion" class="form-label">Sección</label>
+                            <input formControlName="seccion" type="text" class="form-control" id="seccion" min="0" minlength="4" maxlength="4" placeholder="Ejemplo: 1234" required>
+                        </div>
+                        <div class="mb-3">
+                            <label  for="total_conteo" class="form-label">Total del conteo</label>
+                            <input formControlName="total_conteo" type="number" class="form-control" id="total_conteo" placeholder="Ingresa el conteo total..." required>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary w-100"
+                            [disabled]="!myFormConteo.valid"
+                            >Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
