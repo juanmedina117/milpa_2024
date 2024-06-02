@@ -8,12 +8,11 @@ const registrarMovilizador = async (req, res) => {
 
    try {
         
-
-
         console.log(req.body);
     
         // Validacion
-        await check('numero_conteo').notEmpty().run(req);
+        await check('nombre').notEmpty().run(req);
+        await check('numero_movilizador').notEmpty().run(req);
         await check('seccion').notEmpty().run(req);
         await check('latitud').notEmpty().run(req);
         await check('longitud').notEmpty().run(req);
@@ -27,19 +26,17 @@ const registrarMovilizador = async (req, res) => {
             })
         }
     
-        const conteo = await Conteo.create(req.body);
+        const movilizador = await Movilizador.create(req.body);
+        if(movilizador){
     
-        
-        if(conteo){
-    
-           return  res.status(200).send({
+            return res.status(200).send({
                 code:1,
                 msg:"Registro realizado con exito.",
-                conteo
+                movilizador
             });
             
         }else{
-          return  res.status(500).send({
+            return res.status(500).send({
                 code:0,
                 msg:"NO se guardo el registro",
                 conteo
