@@ -1,4 +1,12 @@
+import { check, validationResult } from "express-validator";
 
+import Conteo from '../models/Conteo.js';
+
+
+
+const registrarConteo = async (req, res) => {
+
+    console.log(req.body);
 
     // Validacion
     await check('numero_conteo').notEmpty().run(req);
